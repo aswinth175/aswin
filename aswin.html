@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script> 
+	console.log("1");
+	setTimeout(()=>{
+	console.log("2");
+	},2000)
+	console.log("3");
+	console.log("4");
+	setTimeout(()=>{
+	console.log("5")
+	},0)
+	console.log("6");
+</script>
+<h1>call back </h1>
+<script>
+console.log("Callback")
+	function one(){
+	console.log("1");
+	two()
+	}
+	function two(){
+	setTimeout(()=>{
+	console.log("2");
+	three()
+	},2000)
+
+	}
+	function three(){
+	console.log("3");
+	}
+	one()
+</script>
+<h1>Promise</h1>
+<script>
+	console.log("Promise")
+	let a=new Promise((res,rej)=>{
+	res("hi")
+	})
+	a.then(console.log)
+	a.catch(console.log)
+</script> 
+<h1>Example</h1>
+<script>
+	console.log("Example")
+	let x=14
+	let y=new Promise((res,rej)=>{
+	if(x%7==0){
+	res("Divisable")
+	}
+	else{
+	rej("Rejected")
+	}
+	})
+	y.then(console.log)
+	y.catch(console.log)
+</script>
+<body>
+</html>
